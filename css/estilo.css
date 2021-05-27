@@ -17,3 +17,18 @@ and open the template in the editor.
     margin-bottom:2px;
 }
 
+#paginabotoes{
+    border: 1px solid black;
+}
+
+#titulomeio{
+    text-align: center;
+}
+
+#paginabotoes label{
+    margin-left:20px;
+}
+
+#paginabotoes input{
+    margin-left:10px;
+}

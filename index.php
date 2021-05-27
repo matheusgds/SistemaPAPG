@@ -16,17 +16,25 @@ and open the template in the editor.
             <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
         </div>
         <div name="paginabotoes" id="paginabotoes">
-            <br><br>
-            <label>Insira O Termo A1 (Primeiro Termo):</label>
-            <input id="inputa1" type="text" name="inputa1" placeholder="Termo A1">
-            <br><br>
-            <label>Insira a R (Razão):</label>
-            <input id="inputr" type="text" name="inputr" placeholder="Razão">
-            <br><br>
-            <label>Insira a Quantidade De Termos (Elementos Da Sequencia):</label>
-            <input id="inputqtde" type="text" name="inputqtde" placeholder="Quantidade Elementos">
-            <br><br><br><br>
-            <button type="submit">Enviar</button>
+            <h2 name="titulomeio" id="titulomeio"> Dados da Progressão: </h2>
+            <form>
+                <br><br>
+                <label>Insira O Termo A1 (Primeiro Termo):</label>
+                <input id="inputa1" type="text" name="inputa1" placeholder="Termo A1">
+                <br><br>
+                <label>Insira a R (Razão):</label>
+                <input id="inputr" type="text" name="inputr" placeholder="Razão">
+                <br><br>
+                <label>Insira a Quantidade De Termos (Elementos Da Sequencia):</label>
+                <input id="inputqtde" type="text" name="inputqtde" placeholder="Quantidade Elementos">
+                <br><br>
+                <label>Selecione o Tipo de Progressão ao Lado:</label>
+                <INPUT TYPE="RADIO" NAME="opcaoPAPG" id="inputpapg" VALUE="op1"> PA
+                <INPUT TYPE="RADIO" NAME="opcaoPAPG" id="inputpapg" VALUE="op2"> PG
+                <br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
         </div>
         <?php
         ?>
