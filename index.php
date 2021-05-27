@@ -12,12 +12,23 @@ and open the template in the editor.
         <title>Sistema PAPG</title>
     </head>
     <body>
+        <div> 
+            <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
+        </div>
         <div name="paginabotoes" id="paginabotoes">
-            <input class="inputa1" type="text" name="a1" placeholder="Termo A1">
-            
+            <br><br>
+            <label>Insira O Termo A1 (Primeiro Termo):</label>
+            <input id="inputa1" type="text" name="inputa1" placeholder="Termo A1">
+            <br><br>
+            <label>Insira a R (Razão):</label>
+            <input id="inputr" type="text" name="inputr" placeholder="Razão">
+            <br><br>
+            <label>Insira a Quantidade De Termos (Elementos Da Sequencia):</label>
+            <input id="inputqtde" type="text" name="inputqtde" placeholder="Quantidade Elementos">
+            <br><br><br><br>
+            <button type="submit">Enviar</button>
         </div>
         <?php
-            
         ?>
     </body>
 </html>
