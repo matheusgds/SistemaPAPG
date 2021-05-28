@@ -15,13 +15,26 @@ class CalculaValores {
 
     public function CalculaPA($razao, $numseq, $a1) {
         $vetor = array();
-        $vetor[0] = (int)$a1;
+        $vetor[0] = (int) $a1;
 
         for ($i = 1; $i < $numseq; $i++) {
-            $valorant = $vetor[$i - 1];
-            $vetor[$i] = $valorant + $razao;
+            $valor = 1;
+            $vetor[$i] = ($a1 + $valor * $razao);
+            $valor = $valor + 1;
         }
 
+        return $vetor;
+    }
+
+    public function CalculaPG($razao, $numseq, $a1) {
+        $vetor = array();
+        $vetor[0] = (int) $a1;
+
+        for ($i = 1; $i < $numseq; $i++) {
+            $valor = 1;
+            $vetor[$i] = ($a1 * (pow($a1, $valor)));
+            $valor = $valor + 1;
+        }
         return $vetor;
     }
 
