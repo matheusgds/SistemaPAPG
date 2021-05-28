@@ -44,4 +44,10 @@ and open the template in the editor.
 #Menu{
     text-align: center;
     border:1px solid black;
+    height:200px;
+    
+}
+
+#Menu button{
+    margin-top: 10px;
 }
