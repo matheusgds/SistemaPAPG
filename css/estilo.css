@@ -40,3 +40,8 @@ and open the template in the editor.
 #limpar{
     margin-left:300px;
 }
+
+#Menu{
+    text-align: center;
+    border:1px solid black;
+}

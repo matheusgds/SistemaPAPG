@@ -8,14 +8,20 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width-device-width,initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+        <link rel="stylesheet" type="text/css" href=""/>
         <title>Sistema PAPG</title>
     </head>
     <body>
-        <div name="Menu" id="Menu">
-            
+         <div> 
+            <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
         </div>
-        
+        <div name="Menu" id="Menu">
+
+            <a href="../index.php"><button type="submit" name="Dados" id="Dados">Gerar PA e/ou PG</button></a>
+            <a href="../ArquivosPHP/RetornoJson.php"><button type="submit" name="retornoJson" id="retornoJson">Importar Arquivo Json</button></a>
+
+        </div>
+
         <?php
         // put your code here
         ?>

@@ -15,7 +15,7 @@ class CalculaValores {
 
     public function CalculaPA($razao, $numseq, $a1) {
         $vetor = array();
-        $vetor[0] = $a1;
+        $vetor[0] = (int)$a1;
 
         for ($i = 1; $i < $numseq; $i++) {
             $valorant = $vetor[$i - 1];
