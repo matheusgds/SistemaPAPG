@@ -17,7 +17,7 @@ and open the template in the editor.
         </div>
         <div name="paginabotoes" id="paginabotoes">
             <h2 name="titulomeio" id="titulomeio"> Dados da Progressão: </h2>
-            <form>
+            <form method="POST" action="./arquivosPHP/dados.php" name="formContato"v>
                 <br><br>
                 <label>Insira O Termo A1 (Primeiro Termo):</label>
                 <input id="inputa1" type="text" name="inputa1" placeholder="Termo A1">
@@ -32,11 +32,18 @@ and open the template in the editor.
                 <INPUT TYPE="RADIO" NAME="opcaoPAPG" id="inputpapg" VALUE="op1"> PA
                 <INPUT TYPE="RADIO" NAME="opcaoPAPG" id="inputpapg" VALUE="op2"> PG
                 <br><br>
-
-                <button type="submit">Enviar</button>
+                <label>Insira o Nome do Arquivo:</label>
+                <input id="inputnamearq" type="text" name="inputnamearq" placeholder="">
+                
+                <br><br>
+                <button type="reset" name="limpar" id="limpar">Limpar</button>
+                <button type="submit" name="Enviar" id="Enviar">Enviar</button>
+                <br><br>
             </form>
         </div>
         <?php
         ?>
+        
+        
     </body>
 </html>
