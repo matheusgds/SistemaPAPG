@@ -17,7 +17,7 @@ and open the template in the editor.
         </div>
         <div name="paginabotoes" id="paginabotoes">
             <h2 name="titulomeio" id="titulomeio"> Dados da Progressão: </h2>
-            <form method="POST" action="./arquivosPHP/dados.php" name="formContato"v>
+            <form method="POST" action="./ArquivosPHP/ManipulaDados.php" name="formContato"v>
                 <br><br>
                 <label>Insira O Termo A1 (Primeiro Termo):</label>
                 <input id="inputa1" type="text" name="inputa1" placeholder="Termo A1">

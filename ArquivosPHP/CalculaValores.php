@@ -12,7 +12,8 @@
  * @author mathe
  */
 class CalculaValores {
-    
+
+    static $nome;
 
     public function CalculaPA($razao, $numseq, $a1) {
         $vetor = array();
@@ -57,7 +58,13 @@ class CalculaValores {
             return $json;
         }
     }
-    
 
- 
+    public static function setarNomeArq($nomet) {
+        Self::$nome = $nomet;
+    }
+
+    public static function getNomeArq() {
+        return Self::$nome;
+    }
+
 }

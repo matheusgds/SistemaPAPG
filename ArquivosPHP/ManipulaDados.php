@@ -1,11 +1,20 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
 <?php
-require_once (realpath($_SERVER["DOCUMENT_ROOT"]) ."\SistemaPAPG\SistemaPAPG\ArquivosPHP\CalculaValores.php");
+require_once (realpath($_SERVER["DOCUMENT_ROOT"]) . "\SistemaPAPG\SistemaPAPG\ArquivosPHP\CalculaValores.php");
+session_start();
 
 $a1 = $_POST["inputa1"];
 $r = $_POST["inputr"];
 $qtnd = $_POST["inputqtde"];
 $opcao = $_POST["opcaoPAPG"];
 $nomearq = $_POST["inputnamearq"];
+$_SESSION['nomearquivo']=$nomearq;
 $soma = 0;
 $media;
 $mediana;
@@ -80,6 +89,18 @@ $classe->ObjParaJson($vet1, $nomearq);
 
 CalculaValores::setarNomeArq($nomearq);
 echo CalculaValores::getNomeArq();
-
-header('location:http://localhost/SistemaPAPG/SistemaPAPG/Download.php');
 ?>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <input hidden="button" name="peganomedoarq" value="<?php echo $nomearq ?>">
+        <a href="http://localhost/SistemaPAPG/SistemaPAPG/Download.php"> <button> Download Do Arquivo! Acesse Aqui</button> </a>
+        <script>
+
+        </script>
+    </body>
+</html>
