@@ -1,5 +1,5 @@
 <?php
-
+require_once (realpath($_SERVER["DOCUMENT_ROOT"]) ."\SistemaPAPG\SistemaPAPG\ArquivosPHP\CalculaValores.php");
 
 $a1 = $_POST["inputa1"];
 $r = $_POST["inputr"];
@@ -77,7 +77,6 @@ if ($opcao == "op1") {
 }
 
 $classe->ObjParaJson($vet1, $nomearq);
-
 
 header('location:http://localhost/SistemaPAPG/SistemaPAPG/Download.php');
 ?>
