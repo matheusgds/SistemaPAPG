@@ -45,7 +45,6 @@ and open the template in the editor.
     text-align: center;
     border:1px solid black;
     height:200px;
-    
 }
 
 
@@ -59,4 +58,17 @@ and open the template in the editor.
 
 #Upload button{
     margin-left:140px;
+}
+
+#Download{
+    border:1px solid black;
+}
+
+#download button{
+    margin-left:140px;
+}
+
+#janelaManipulaDados a {
+    margin-left:20px;
+    margin-top:20px;
 }

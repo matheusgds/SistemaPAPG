@@ -14,7 +14,7 @@ $r = $_POST["inputr"];
 $qtnd = $_POST["inputqtde"];
 $opcao = $_POST["opcaoPAPG"];
 $nomearq = $_POST["inputnamearq"];
-$_SESSION['nomearquivo']=$nomearq;
+$_SESSION['nomearquivo'] = $nomearq;
 $soma = 0;
 $media;
 $mediana;
@@ -88,19 +88,23 @@ if ($opcao == "op1") {
 $classe->ObjParaJson($vet1, $nomearq);
 
 CalculaValores::setarNomeArq($nomearq);
-echo CalculaValores::getNomeArq();
 ?>
 
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+        <title>Sistema PAPG</title>
     </head>
     <body>
-        <input hidden="button" name="peganomedoarq" value="<?php echo $nomearq ?>">
-        <a href="http://localhost/SistemaPAPG/SistemaPAPG/Download.php"> <button> Download Do Arquivo! Acesse Aqui</button> </a>
-        <script>
-
-        </script>
+        <div> 
+            <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
+        </div>
+        <div id="janelaManipulaDados" name="janelaManipulaDados">
+            <input hidden="button" name="peganomedoarq" value="<?php echo $nomearq ?>">
+            <a href="http://localhost/SistemaPAPG/SistemaPAPG/Download.php"> <button> Download Do Arquivo! Acesse Aqui</button> </a>
+            
+            <a href="http://localhost/SistemaPAPG/SistemaPAPG/JanelaPrincipal.php"> <button> Voltar ao Inicio</button> </a>
+        </div>
     </body>
 </html>
