@@ -19,8 +19,8 @@ and open the template in the editor.
             <h1> MENU DE ACESSO </h1>
             <a href="index.php"><button type="submit" name="Dados" id="Dados">Gerar PA e/ou PG</button></a>
             <br> <br>
-            <a href="ArquivosPHP/RetornoJson.php"><button type="submit" name="retornoJson" id="retornoJson">Importar Arquivo Json</button></a>
-
+            <a href="RetornoJson.php"><button type="submit" name="retornoJson" id="retornoJson">Importar Arquivo Json</button></a>
+            <br><br>
         </div>
 
         <?php

@@ -48,6 +48,15 @@ and open the template in the editor.
     
 }
 
+
 #Menu button{
     margin-top: 10px;
+}
+
+#Upload{
+    border:1px solid black;
+}
+
+#Upload button{
+    margin-left:140px;
 }

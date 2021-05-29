@@ -34,7 +34,7 @@ and open the template in the editor.
                 <br><br>
                 <label>Insira o Nome do Arquivo:</label>
                 <input id="inputnamearq" type="text" name="inputnamearq" placeholder="">
-                
+
                 <br><br>
                 <button type="reset" name="limpar" id="limpar">Limpar</button>
                 <button type="submit" name="Enviar" id="Enviar">Enviar</button>
@@ -42,8 +42,9 @@ and open the template in the editor.
             </form>
         </div>
         <?php
+            
         ?>
-        
-        
+
+
     </body>
 </html>

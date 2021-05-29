@@ -1,13 +1,12 @@
 <?php
 
-include("../ArquivosPHP/CalculaValores.php");
 
 $a1 = $_POST["inputa1"];
 $r = $_POST["inputr"];
 $qtnd = $_POST["inputqtde"];
 $opcao = $_POST["opcaoPAPG"];
 $nomearq = $_POST["inputnamearq"];
-$soma;
+$soma = 0;
 $media;
 $mediana;
 $nummedia;
@@ -21,12 +20,12 @@ if ($opcao == "op1") {
     $ult = end($vet1);
 
     for ($i = 0; $i < $qtnd; $i++) {
-        $soma = $soma + $vet1[i];
+        $soma = $soma + $vet1[$i];
     }
 
     $media = $soma / $qtnd;
 
-    if ($qntd % 2 == 0) {
+    if ($qtnd % 2 == 0) {
         $nummedia = $qtnd / 2; // 10 vai ficar 5
         $mediana = ($vet1[$nummedia] + $vet1[$nummedia + 1]) / 2;
     } else {
@@ -52,12 +51,12 @@ if ($opcao == "op1") {
     $ult = end($vet1);
 
     for ($i = 0; $i < $qtnd; $i++) {
-        $soma = $soma + $vet1[i];
+        $soma = $soma + $vet1[$i];
     }
 
     $media = $soma / $qtnd;
 
-    if ($qntd % 2 == 0) {
+    if ($qtnd % 2 == 0) {
         $nummedia = $qtnd / 2; // 10 vai ficar 5
         $mediana = ($vet1[$nummedia] + $vet1[$nummedia + 1]) / 2;
     } else {
@@ -75,9 +74,10 @@ if ($opcao == "op1") {
     $vet1[] = $soma;
     $vet1[] = $media;
     $vet1[] = $mediana;
-    
 }
 
+$classe->ObjParaJson($vet1, $nomearq);
 
-$met = $classe->ObjParaJson($vet1, $nomearq);
+
+header('location:http://localhost/SistemaPAPG/SistemaPAPG/Download.php');
 ?>
