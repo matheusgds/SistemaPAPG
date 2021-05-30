@@ -12,6 +12,11 @@ and open the template in the editor.
         <title>Sistema PAPG</title>
     </head>
     <body>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Selecione o arquivo: <input type="file" name="arquivo" />
+            <input type="submit" value="Enviar"/>
+        </form>
+
         <?php
         // put your code here
         ?>

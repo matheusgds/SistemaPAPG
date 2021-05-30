@@ -59,12 +59,28 @@ class CalculaValores {
         }
     }
 
+    public function verificaehString($vetor) {
+        $count = count($array);
+        for ($i = 0; $i < $count; $i++) {
+            if (is_string($vetor[$i])) {
+                return $i;
+            }
+        }
+    }
+
     public static function setarNomeArq($nomet) {
         Self::$nome = $nomet;
     }
 
     public static function getNomeArq() {
         return Self::$nome;
+    }
+
+    public function excludeJson() {
+        if (isset($_POST["baixar"])) {
+            //unlink($diretorio);
+            echo "<script>alert('DEU BOA!);</script>";
+        }
     }
 
 }

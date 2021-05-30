@@ -7,6 +7,12 @@ $c = ".json";
 $a = "http://localhost/SistemaPAPG/SistemaPAPG/ArquivosPHP/";
 $b = $_SESSION['nomearquivo'];
 $d = $a . $b . $c;
+$comandoreal = realpath($_SERVER["DOCUMENT_ROOT"]);
+$e = "\SistemaPAPG\SistemaPAPG\ArquivosPHP";
+$e .= chr(92);
+$diretorio = $comandoreal.$e.$b.$c;
+$_SESSION['diretorio'] = $diretorio;
+
 
 ?>
 
@@ -17,16 +23,18 @@ $d = $a . $b . $c;
 </head>
 
 <body>
-<div> 
-    <h1 name= "titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
-</div>
-<div name="Download" id="Download">
-    <h1> Download de arquivo </h1>
-    
-    <a href= "<?php echo $d; ?>" download>Baixar Arquivo</a>
-    <a href="http://localhost/SistemaPAPG/SistemaPAPG/JanelaPrincipal.php"> <button> Voltar ao Inicio</button> </a>
-</div>
-<?php
-?>
-    
+    <div> 
+        <h1 name= "titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
+    </div>
+    <div name="Download" id="Download">
+        <h1> Download de arquivo </h1>
+        <form action="ExcluirJSON.php" method="post">
+            <a href= "<?php echo $d; ?>" name ="baixar" value="baixar" download>Baixar Arquivo</a>
+            
+            <button type="submit" name="Enviar" id="Enviar">>>></button>
+        </form>
+    </div>
+    <?php
+    ?>
+
 </body>

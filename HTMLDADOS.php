@@ -16,7 +16,7 @@ $soma = 0;
 $media;
 $mediana;
 $nummedia;
-$vet1;
+$vet1=[];
 
 $classe = new CalculaValores();
 
@@ -81,6 +81,7 @@ if ($opcao == "op1") {
     $vet1[] = $media;
     $vet1[] = $mediana;
 }
+
 
 $classe->ObjParaJson($vet1, $nomearq);
 
