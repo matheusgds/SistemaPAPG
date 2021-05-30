@@ -13,7 +13,6 @@ $e .= chr(92);
 $diretorio = $comandoreal.$e.$b.$c;
 $_SESSION['diretorio'] = $diretorio;
 
-
 ?>
 
 <head>

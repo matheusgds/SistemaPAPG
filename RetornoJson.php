@@ -16,10 +16,12 @@ and open the template in the editor.
         </div>
         <div name="Upload" id="Upload">
             <h1> MENU DE UPLOAD </h1>
-            <label for="file">Selecione o Arquivo:</label>
-            <input type="file" name="file" />
-            <br> <br>
-            <a href=".php"><button type="submit" name="import" id="import">Importar Arquivo Json</button></a>
+            <form action="Upload.php" method="post" enctype="multipart/form-data">
+                <label for="file">Selecione o Arquivo:</label>
+                <input type="file" name="arquivo" />
+                <br> <br>
+                <button type="submit" name="import" id="import">Importar Arquivo Json</button>
+            </form>
             <br> <br>
 
         </div>

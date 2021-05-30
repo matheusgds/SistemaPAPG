@@ -63,7 +63,7 @@ class CalculaValores {
         $count = count($array);
         for ($i = 0; $i < $count; $i++) {
             if (is_string($vetor[$i])) {
-                return $i;
+                return ($i-1);
             }
         }
     }
@@ -83,4 +83,5 @@ class CalculaValores {
         }
     }
 
+    
 }
