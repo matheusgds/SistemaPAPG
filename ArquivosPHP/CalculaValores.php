@@ -68,6 +68,87 @@ class CalculaValores {
         }
     }
 
+    public function calculaSoma($vet2) {
+        $qtd = count($vet2);
+        for ($i = 0; $i < $qtd; $i++) {
+            $soma = $soma + $vet2[$i];
+        }
+        return $soma;
+    }
+
+    public function calculaMedia($vet2) {
+        $qtd = count($vet2);
+        $media = self::calculaSoma($vet2) / $qtd;
+        return $media;
+    }
+
+    public function calculaMediana($vet2) {
+        $qtd = count($vet2);
+        if ($qtd % 2 == 0) {
+            $nummedia = $qtnd / 2; // 10 vai ficar 5
+            $mediana = ($vet2[$nummedia] + $vet2[$nummedia + 1]) / 2;
+        } else {
+            $nummedia = $qtnd / 2;
+            $mediana = floor(($vet2[$nummedia]));
+        }
+    }
+
+    public function returnVetorGrafico($vet2) {
+        $qtd = count($vet2);
+        $array = ['Sequencia', 'teste'];
+        $qtdarray = count($array);
+        $grafico[0] = $array; // grafico[0][0]e grafico[0][1]
+        for ($i = 1; $i < ($qtd + 1); $i++) {
+            $newarray = [];
+            $newarray = [$i, $vet2[($i - 1)]];
+            $grafico[$i] = $newarray;
+        }
+       
+        $contagem = count($grafico);
+
+       // for ($o = 0; $o < $contagem; $o++) {
+      //      for ($p = 0; $p < 2; $p++) {
+     //           echo $grafico[$o][$p] . " ";
+     //       }
+    //    }
+
+
+        $stringvolta = "";
+
+        for ($o = 0; $o < $contagem; $o++) {
+            $stringvolta = $stringvolta . '[';
+            for ($p = 0; $p < 2; $p++) {
+                if (($o === 0) && ($p == 0)) {
+                    $stringvolta = $stringvolta . "'";
+                } else
+                if (($o === 0) && ($p == 1)) {
+                    $stringvolta = $stringvolta . "'";
+                }
+                $stringvolta = $stringvolta . $grafico[$o][$p];
+                if (($o === 0) && ($p == 0)) {
+                    $stringvolta = $stringvolta . "',";
+                } else
+                if (($o === 0) && ($p == 1)) {
+                    //$stringvolta = $stringvolta . "',";
+                } else if ($p != 1) {
+                    $stringvolta = $stringvolta . ",";
+                }
+            }
+            
+            if (($o != ($contagem-1)) && ($p != 1)) {
+                $stringvolta = $stringvolta . "],";
+            }else{
+                $stringvolta = $stringvolta . "]";
+            }
+        }
+
+        return $grafico;
+    }
+
+    public function verificaPAPG($vet2) {
+        
+    }
+
     public static function setarNomeArq($nomet) {
         Self::$nome = $nomet;
     }
@@ -76,12 +157,4 @@ class CalculaValores {
         return Self::$nome;
     }
 
-    public function excludeJson() {
-        if (isset($_POST["baixar"])) {
-            //unlink($diretorio);
-            echo "<script>alert('DEU BOA!);</script>";
-        }
-    }
-
-    
 }

@@ -11,8 +11,9 @@ require_once (realpath($_SERVER["DOCUMENT_ROOT"]) . "\SistemaPAPG\SistemaPAPG\Ar
 $nomearq = $_SESSION['novonome'];
 $classe = new CalculaValores();
 $dados = $classe->JsonParaObj($nomearq);
-$valorlimite;
-$valorlimite = count($dados[0]);
+
+//echo $classe->returnVetorGrafico($dados);
+$stringteste = $classe->returnVetorGrafico($dados);
 ?>
 
 <html>
@@ -26,55 +27,34 @@ $valorlimite = count($dados[0]);
         <div> 
             <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
         </div>
-        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+         <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
-
-        <?php
-        $count = count($dados);
-        for ($i = 0; $i < $count; $i++) {
-            if ($i == 0) {
-                $count2 = count($dados[0]);
-                for ($j = 0; $j < $count2; $j++) {
-                    echo "";
-                    echo ($dados[0][$j] . " ");
-                    echo "";
-                }
-            } else {
-                echo "";
-                echo ($dados[$i] . "  ");
-                echo "";
-            }
-        }
-        echo '';
-        ?>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
             google.charts.load('current', {'packages': ['corechart']});
             google.charts.setOnLoadCallback(drawChart);
-            var nomenclatura = "<?php echo $dados[1] ?>";
-            var dados = "<?php echo $str ?>";
-            var limite = "<?php echo $valorlimite ?>";
-            var str;
+            teste = <?php echo $stringteste; ?>
+            
             function drawChart() {
                 var data = google.visualization.arrayToDataTable([
-                        for (var i = 0; i < limite; i++) {
-                    if (i === 0) {
-                        str = str + "['Sequencia', nomenclatura],";
-                    }
-                }
-                ['Sequencia', nomenclatura],
-                        [4, 27],
-                        [5, 81]
-
+                    ['Year', 'Sales', 'Expenses'],
+                    ['2004', 1000, 400],
+                    ['2005', 1170, 460],
+                    ['2006', 660, 1120],
+                    ['2007', 1030, 540]
                 ]);
-                var options = {
 
-                    title: 'Grafico Da ' + nomenclatura,
+
+                var options = {
+                    title: 'Company Performance',
                     curveType: 'function',
                     legend: {position: 'bottom'}
                 };
+
+
                 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
                 chart.draw(data, options);
             }
         </script>

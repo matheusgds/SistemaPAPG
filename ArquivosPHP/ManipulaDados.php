@@ -15,78 +15,18 @@ $qtnd = $_POST["inputqtde"];
 $opcao = $_POST["opcaoPAPG"];
 $nomearq = $_POST["inputnamearq"];
 $_SESSION['nomearquivo'] = $nomearq;
-$soma = 0;
-$media;
-$mediana;
-$nummedia;
-$vet1 = [];
+
 $vet2 = [];
 
 $classe = new CalculaValores();
 
 if ($opcao == "op1") {
     $vet2 = $classe->CalculaPA($r, $qtnd, $a1);
-    $vet1[0] = $vet2;
-    $ult = end($vet2);
-
-    for ($i = 0; $i < $qtnd; $i++) {
-        $soma = $soma + $vet2[$i];
-    }
-
-    $media = $soma / $qtnd;
-
-    if ($qtnd % 2 == 0) {
-        $nummedia = $qtnd / 2; // 10 vai ficar 5
-        $mediana = ($vet2[$nummedia] + $vet2[$nummedia + 1]) / 2;
-    } else {
-        $nummedia = $qtnd / 2;
-        $mediana = floor(($vet2[$nummedia]));
-    }
-
-
-    if ($opcao == "op1") {
-        $vet1[1] = "PA";
-    }
-
-    $vet1[2] = $a1;
-    $vet1[3] = $r;
-    $vet1[4] = $qtnd;
-// somatoria,media, mediana
-    $vet1[5] = $soma;
-    $vet1[6] = $media;
-    $vet1[7] = $mediana;
 } else if ($opcao == "op2") {
     $vet2 = $classe->CalculaPG($r, $qtnd, $a1);
-    $vet1[0] = $vet2;
-    $ult = end($vet2);
-
-    for ($i = 0; $i < $qtnd; $i++) {
-        $soma = $soma + $vet2[$i];
-    }
-
-    $media = $soma / $qtnd;
-
-    if ($qtnd % 2 == 0) {
-        $nummedia = $qtnd / 2; // 10 vai ficar 5
-        $mediana = ($vet2[$nummedia] + $vet2[$nummedia + 1]) / 2;
-    } else {
-        $nummedia = $qtnd / 2;
-        $mediana = floor(($vet2[$nummedia]));
-    }
-    if ($opcao == "op2") {
-        $vet1[1] = "PG";
-    }
-
-    $vet1[2] = $a1;
-    $vet1[3] = $r;
-    $vet1[4] = $qtnd;
-// somatoria,media, mediana
-    $vet1[5] = $soma;
-    $vet1[6] = $media;
-    $vet1[7] = $mediana;
 }
 
-$classe->ObjParaJson($vet1, $nomearq);
+$classe->ObjParaJson($vet2, $nomearq);
 
 CalculaValores::setarNomeArq($nomearq);
 ?>
