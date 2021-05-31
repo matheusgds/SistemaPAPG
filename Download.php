@@ -6,6 +6,7 @@ session_start();
 $c = ".json";
 $a = "http://localhost/SistemaPAPG/SistemaPAPG/ArquivosPHP/";
 $b = $_SESSION['nomearquivo'];
+$_SESSION['nome'] = $b;
 $d = $a . $b . $c;
 $comandoreal = realpath($_SERVER["DOCUMENT_ROOT"]);
 $e = "\SistemaPAPG\SistemaPAPG\ArquivosPHP";

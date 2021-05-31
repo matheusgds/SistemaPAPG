@@ -19,70 +19,71 @@ $soma = 0;
 $media;
 $mediana;
 $nummedia;
-$vet1;
+$vet1 = [];
+$vet2 = [];
 
 $classe = new CalculaValores();
 
 if ($opcao == "op1") {
-    $vet1 = $classe->CalculaPA($r, $qtnd, $a1);
-
-    $ult = end($vet1);
+    $vet2 = $classe->CalculaPA($r, $qtnd, $a1);
+    $vet1[0] = $vet2;
+    $ult = end($vet2);
 
     for ($i = 0; $i < $qtnd; $i++) {
-        $soma = $soma + $vet1[$i];
+        $soma = $soma + $vet2[$i];
     }
 
     $media = $soma / $qtnd;
 
     if ($qtnd % 2 == 0) {
         $nummedia = $qtnd / 2; // 10 vai ficar 5
-        $mediana = ($vet1[$nummedia] + $vet1[$nummedia + 1]) / 2;
+        $mediana = ($vet2[$nummedia] + $vet2[$nummedia + 1]) / 2;
     } else {
         $nummedia = $qtnd / 2;
-        $mediana = floor(($vet1[$nummedia]));
+        $mediana = floor(($vet2[$nummedia]));
     }
 
 
     if ($opcao == "op1") {
-        $vet1[] = "PA";
+        $vet1[1] = "PA";
     }
 
-    $vet1[] = $a1;
-    $vet1[] = $r;
-    $vet1[] = $qtnd;
+    $vet1[2] = $a1;
+    $vet1[3] = $r;
+    $vet1[4] = $qtnd;
 // somatoria,media, mediana
-    $vet1[] = $soma;
-    $vet1[] = $media;
-    $vet1[] = $mediana;
+    $vet1[5] = $soma;
+    $vet1[6] = $media;
+    $vet1[7] = $mediana;
 } else if ($opcao == "op2") {
-    $vet1 = $classe->CalculaPG($r, $qtnd, $a1);
-
-    $ult = end($vet1);
+    $vet2 = $classe->CalculaPG($r, $qtnd, $a1);
+    $vet1[0] = $vet2;
+    $ult = end($vet2);
 
     for ($i = 0; $i < $qtnd; $i++) {
-        $soma = $soma + $vet1[$i];
+        $soma = $soma + $vet2[$i];
     }
 
     $media = $soma / $qtnd;
 
     if ($qtnd % 2 == 0) {
         $nummedia = $qtnd / 2; // 10 vai ficar 5
-        $mediana = ($vet1[$nummedia] + $vet1[$nummedia + 1]) / 2;
+        $mediana = ($vet2[$nummedia] + $vet2[$nummedia + 1]) / 2;
     } else {
         $nummedia = $qtnd / 2;
-        $mediana = floor(($vet1[$nummedia]));
+        $mediana = floor(($vet2[$nummedia]));
     }
     if ($opcao == "op2") {
-        $vet1[] = "PG";
+        $vet1[1] = "PG";
     }
 
-    $vet1[] = $a1;
-    $vet1[] = $r;
-    $vet1[] = $qtnd;
+    $vet1[2] = $a1;
+    $vet1[3] = $r;
+    $vet1[4] = $qtnd;
 // somatoria,media, mediana
-    $vet1[] = $soma;
-    $vet1[] = $media;
-    $vet1[] = $mediana;
+    $vet1[5] = $soma;
+    $vet1[6] = $media;
+    $vet1[7] = $mediana;
 }
 
 $classe->ObjParaJson($vet1, $nomearq);
@@ -103,7 +104,7 @@ CalculaValores::setarNomeArq($nomearq);
         <div id="janelaManipulaDados" name="janelaManipulaDados">
             <input hidden="button" name="peganomedoarq" value="<?php echo $nomearq ?>">
             <a href="http://localhost/SistemaPAPG/SistemaPAPG/Download.php"> <button> Download Do Arquivo! Acesse Aqui</button> </a>
-            
+
             <a href="http://localhost/SistemaPAPG/SistemaPAPG/JanelaPrincipal.php"> <button> Voltar ao Inicio</button> </a>
         </div>
     </body>

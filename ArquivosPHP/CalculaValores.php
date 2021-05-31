@@ -60,10 +60,10 @@ class CalculaValores {
     }
 
     public function verificaehString($vetor) {
-        $count = count($array);
+        $count = count($vetor);
         for ($i = 0; $i < $count; $i++) {
             if (is_string($vetor[$i])) {
-                return ($i-1);
+                return ($i);
             }
         }
     }
