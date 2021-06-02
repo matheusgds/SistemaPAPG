@@ -13,9 +13,7 @@ $classe = new CalculaValores();
 
 $dados = $classe->JsonParaObj($nomearq);
 
-$ndados;
-
-
+$ndados = count($dados);
 
 
 if (empty($dados)) {
@@ -62,7 +60,7 @@ if (empty($dados)) {
             <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
         </div>
         <div id="verifica">
-            
+
         </div>
         <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
@@ -73,7 +71,7 @@ if (empty($dados)) {
             }
             ?>
         </div>
-        
+
 
 
         <div id="DadosTeste" style="width: 900px; height: 500px">
@@ -128,54 +126,46 @@ if (empty($dados)) {
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
-            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
             google.charts.setOnLoadCallback(drawChart);
-            valortotal =<?php echo $ndados; ?>;
-<?php
-$cont = 0;
-$cont2 = 0;
-?>
-
-            matriz = new array(valortotal);
-
-            for (var i = 0; i < valortotal; i++) {
-                matriz[i] = [<?php echo $stringteste[$cont][$cont2]; ?>,<?php echo $stringteste[$cont][$cont2 + 1]; ?>];
-
-
-            }
-            
-            for (var i = 0; i < valortotal; i++) {
-               document.getElementById("verifica").innerHTML = matriz[i][0];
-}
 
             function drawChart() {
-                var data = new google.visualization.DataTable();
-                data.addColumn('number', 'Sequencia');
-                data.addColumn('number', 'PAPG');
+                var data = google.visualization.arrayToDataTable([
+
+                    ['Sequencia', 'PAPG'],
+
+<?php
+for ($valor = 0; $valor < $ndados; $valor++) {
+    ?>
 
 
 
+                        [<?php echo ($valor+1) ?>, <?php echo ($dados[$valor]) ?>],
+                      
 
 
 
+<?php } ?>
 
 
-                data.addRows(
-                        [
-                            [1, 78],
-                            [2, 178]
-                        ]
-                        );
+                ]);
 
                 var options = {
-                    title: 'Company Performance',
+                    title: 'Funcções PA / PG',
                     curveType: 'function',
-                    legend: {position: 'bottom'}
+                    legend: {
+                        position: 'bottom'
+                    }
                 };
+
                 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
                 chart.draw(data, options);
             }
         </script>
+
 
     </body>
 </html>
