@@ -14,8 +14,8 @@ $classe = new CalculaValores();
 $dados = $classe->JsonParaObj($nomearq);
 
 $ndados;
-$z1 = 0;
-$z2 = 0;
+
+
 
 
 if (empty($dados)) {
@@ -61,6 +61,9 @@ if (empty($dados)) {
         <div> 
             <h1 name="titulotopo" id="titulotopo"> SISTEMA PAPG</h1>
         </div>
+        <div id="verifica">
+            
+        </div>
         <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
         <div style="color:red;">
@@ -70,7 +73,7 @@ if (empty($dados)) {
             }
             ?>
         </div>
-
+        
 
 
         <div id="DadosTeste" style="width: 900px; height: 500px">
@@ -128,21 +131,22 @@ if (empty($dados)) {
             google.charts.load('current', {'packages': ['corechart']});
             google.charts.setOnLoadCallback(drawChart);
             valortotal =<?php echo $ndados; ?>;
+<?php
+$cont = 0;
+$cont2 = 0;
+?>
 
-            var matriz = new Array(valortotal);
-              for (var i = 0; i < valortotal; i++) {
-                
-                matriz[i] = [<?php echo $stringteste[$z1][$z2]; ?>,<?php echo $stringteste[$z1][$z2 + 1]; ?>];
-               
-                   document.write("pos:"+i)
-                   
-                   document.write(matriz[i]);
-                   
+            matriz = new array(valortotal);
+
+            for (var i = 0; i < valortotal; i++) {
+                matriz[i] = [<?php echo $stringteste[$cont][$cont2]; ?>,<?php echo $stringteste[$cont][$cont2 + 1]; ?>];
+
+
             }
-
             
-
-
+            for (var i = 0; i < valortotal; i++) {
+               document.getElementById("verifica").innerHTML = matriz[i][0];
+}
 
             function drawChart() {
                 var data = new google.visualization.DataTable();
@@ -150,6 +154,18 @@ if (empty($dados)) {
                 data.addColumn('number', 'PAPG');
 
 
+
+
+
+
+
+
+                data.addRows(
+                        [
+                            [1, 78],
+                            [2, 178]
+                        ]
+                        );
 
                 var options = {
                     title: 'Company Performance',

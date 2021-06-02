@@ -16,6 +16,7 @@ class CalculaValores {
     static $nome;
     static $variavelPEGAPAPG;
 
+
     public function CalculaPA($razao, $numseq, $a1) {
         $vetor = array();
         $vetor[0] = (int) $a1;
@@ -122,7 +123,6 @@ class CalculaValores {
         }
     }
 
-  
     public function returnVetorGrafico($vet2) {
 
         $qtd = count($vet2);
@@ -136,7 +136,7 @@ class CalculaValores {
         }
         for ($i = 0; $i < $qtd; $i++) {
             $newarray = [];
-            $newarray = [$i+1, $vet2[($i)]];
+            $newarray = [$i + 1, $vet2[($i)]];
             $grafico[$i] = $newarray;
         }
 
@@ -348,5 +348,6 @@ class CalculaValores {
             return TRUE;
         }
     }
+
 
 }
